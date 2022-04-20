@@ -19,6 +19,7 @@ data "aws_ami" "ubuntu" {
 }
 
 module "linux_machine" {
+  machine_count = var.machine_count
   source = "../ec2"
   region = var.region
   ami = data.aws_ami.ubuntu.id

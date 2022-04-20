@@ -10,3 +10,6 @@ variable "instance_type" {
 variable "tag_name" {
   type = string
 }
+variable "machine_count" {
+  type = number
+}

@@ -15,16 +15,25 @@ variable "public_subnet_cidr_block" {
 }
 
 
-variable "window_machine_count" {
+variable "public_window_machine_count" {
   type = number
   default = 0
 }
 
-variable "linux_machine_count" {
+variable "public_linux_machine_count" {
   type = number
   default = 0
 }
 
+variable "private_window_machine_count" {
+  type = number
+  default = 0
+}
+
+variable "private_linux_machine_count" {
+  type = number
+  default = 0
+}
 variable "project_name" {
   type = string
 }

@@ -27,3 +27,23 @@ variable "instance_type" {
   type = string
   default = "t2.micro"
 }
+variable "public_window_machine_count" {
+  type = number
+  default = 1
+}
+
+variable "public_linux_machine_count" {
+  type = number
+  default = 2
+}
+
+variable "private_window_machine_count" {
+  type = number
+  default = 0
+}
+
+variable "private_linux_machine_count" {
+  type = number
+  default = 1
+}
+

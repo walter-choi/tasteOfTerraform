@@ -20,6 +20,7 @@ data "aws_ami" "window" {
 
 module "window_machine" {
   source  = "../ec2"
+  machine_count = var.machine_count
   region = var.region
   ami = data.aws_ami.window.id
   instance_type = var.instance_type
