@@ -7,5 +7,6 @@ module "project" {
   window_machine_count = 1
   linux_machine_count = 0
   project_name = var.project_name
+  instance_type = var.instance_type
 }
 

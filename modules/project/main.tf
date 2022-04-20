@@ -20,3 +20,39 @@ module "private_subnet" {
   subnet_cidr_block = var.private_subnet_cidr_block
   tag_name = join("-",[var.project_name,terraform.workspace,"private_subnet"])
 }
+
+module "public_linux" {
+  source = "../linux_machine"
+  region = var.region
+  subnet_id = module.public_subnet.subnet_id
+  instance_type = var.instance_type
+  tag_name = join("-",[var.project_name,terraform.workspace,"public-linux"])
+}
+
+module "public_window" {
+  source = "../window_machine"
+  region = var.region
+  subnet_id = module.public_subnet.subnet_id
+  instance_type = var.instance_type
+  tag_name = join("-",[var.project_name,terraform.workspace,"public-window"])
+}
+
+module "private_linux" {
+  source = "../linux_machine"
+  region = var.region
+  subnet_id = module.private_subnet.subnet_id
+  instance_type = var.instance_type
+  tag_name = join("-",[var.project_name,terraform.workspace,"private-linux"])
+}
+
+module "private_window" {
+  source = "../window_machine"
+  region = var.region
+  subnet_id = module.private_subnet.subnet_id
+  instance_type = var.instance_type
+  tag_name = join("-",[var.project_name,terraform.workspace,"private-window"])
+}
+
+
+
+
