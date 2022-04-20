@@ -5,11 +5,16 @@ variable "main_region" {
 
 variable "vpc_cidr" {
   type = string
-  default = "10.2.0.0/16"
 }
 
-variable "subnet_cidr" {
+variable "public_subnet_cidr" {
   type = string
-  default = "10.2.1.0/24"
 }
 
+variable "private_subnet_cidr" {
+  type = string
+}
+
+variable "project_name" {
+  type = string
+}

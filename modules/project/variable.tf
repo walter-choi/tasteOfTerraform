@@ -6,9 +6,14 @@ variable "vpc_cidr_block" {
   type = string
 }
 
-variable "subnet_cidr_block" {
+variable "private_subnet_cidr_block" {
   type = string
 }
+
+variable "public_subnet_cidr_block" {
+  type = string
+}
+
 
 variable "window_machine_count" {
   type = number
