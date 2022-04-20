@@ -1,6 +1,6 @@
+
 variable "region" {
   type = string
-  default = "us-east-1"
 }
 
 variable "vpc_id" {
@@ -9,10 +9,8 @@ variable "vpc_id" {
 
 variable "subnet_cidr_block" {
   type = string
-  default = "10.0.1.0/24"
 }
 
 variable "tag_name" {
   type = string
-  default = "unnamed"
 }
