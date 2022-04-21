@@ -11,6 +11,7 @@ module "public_subnet" {
   vpc_id = module.vpc.vpc_id
   subnet_cidr_block = var.public_subnet_cidr_block
   tag_name = join("-",[var.project_name,terraform.workspace,"public_subnet"])
+  dependency = [ module.vpc ]
 }
 
 module "private_subnet" {
@@ -19,6 +20,7 @@ module "private_subnet" {
   vpc_id = module.vpc.vpc_id
   subnet_cidr_block = var.private_subnet_cidr_block
   tag_name = join("-",[var.project_name,terraform.workspace,"private_subnet"])
+  dependency = [ module.vpc ]
 }
 
 module "public_linux" {
@@ -28,6 +30,7 @@ module "public_linux" {
   subnet_id = module.public_subnet.subnet_id
   instance_type = var.instance_type
   tag_name = join("-",[var.project_name,terraform.workspace,"public-linux"])
+#  dependenecy = [ module.public_subnet ]
 }
 
 module "public_window" {
@@ -37,6 +40,7 @@ module "public_window" {
   subnet_id = module.public_subnet.subnet_id
   instance_type = var.instance_type
   tag_name = join("-",[var.project_name,terraform.workspace,"public-window"])
+#  dependenecy = [ module.public_subnet ]
 }
 
 module "private_linux" {
@@ -46,6 +50,7 @@ module "private_linux" {
   subnet_id = module.private_subnet.subnet_id
   instance_type = var.instance_type
   tag_name = join("-",[var.project_name,terraform.workspace,"private-linux"])
+#  dependency = [ module.private_subnet ]
 }
 
 module "private_window" {
@@ -55,6 +60,7 @@ module "private_window" {
   subnet_id = module.private_subnet.subnet_id
   instance_type = var.instance_type
   tag_name = join("-",[var.project_name,terraform.workspace,"private-window"])
+#  dependency = [ module.private_subnet ]
 }
 
 

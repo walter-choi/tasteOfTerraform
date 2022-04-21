@@ -8,5 +8,6 @@ resource "aws_subnet" "this" {
   tags = {
     Name = var.tag_name
   }
+  depends_on = [ var.dependency ]
 }
 

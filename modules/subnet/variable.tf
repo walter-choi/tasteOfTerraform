@@ -14,3 +14,6 @@ variable "subnet_cidr_block" {
 variable "tag_name" {
   type = string
 }
+variable "dependency" {
+  type = list
+}

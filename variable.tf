@@ -29,12 +29,12 @@ variable "instance_type" {
 }
 variable "public_window_machine_count" {
   type = number
-  default = 1
+  default = 0
 }
 
 variable "public_linux_machine_count" {
   type = number
-  default = 2
+  default = 0
 }
 
 variable "private_window_machine_count" {
@@ -44,6 +44,6 @@ variable "private_window_machine_count" {
 
 variable "private_linux_machine_count" {
   type = number
-  default = 1
+  default = 0
 }
 
